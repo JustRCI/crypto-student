@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../asset/img/Favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Student - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fade-in-down { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes fade-in-left { 0% { opacity: 0; transform: translateX(-20px); } 100% { opacity: 1; transform: translateX(0); } }
+        @keyframes bounce-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes fade-in-up { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-down { animation: fade-in-down 0.8s ease-out forwards; }
+        .animate-fade-in-left { animation: fade-in-left 0.8s ease-out forwards; }
+        .animate-bounce-slow { animation: bounce-slow 3s infinite; }
+        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+    </style>
+</head>
+<body>
+    <div class="relative h-screen w-full flex overflow-hidden bg-[#d1d5db]">
+        
+        <div class="relative w-[60%] bg-[#0a051a] flex flex-col p-12 z-10 animate-fade-in-left" style="clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);">
+            <nav class="flex items-center space-x-12 w-full animate-fade-in-down z-20">
+                <img src="../asset/img/icon.png" alt="Logo" class="h-20 w-auto">
+                <div class="flex space-x-8">
+                    <a href="../Index.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">Home</a>
+                    <a href="about.html" class="text-purple-400 border-b-2 border-purple-400 font-bold text-sm hover:text-purple-300 transition-all tracking-wide">About</a>
+                    <a href="service.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">Service</a>
+                    <a href="contact.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">Contact</a>
+                </div>
+            </nav>
+            <div class="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-purple-900/30 blur-[120px] rounded-full z-0"></div>
+        </div>
+
+        <div class="absolute right-0 w-[50%] h-full flex flex-col pt-32 pb-20 pl-60 pr-20 z-0 overflow-y-auto animate-fade-in-up">
+            <h1 class="text-4xl font-extrabold text-[#0a051a] mt-20 mb-6">About Crypto Student</h1>
+            
+            <div class="space-y-6 text-gray-700">
+                <p class="text-lg font-medium">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos quasi repudiandae vel culpa maxime molestias enim officiis voluptatem, cupiditate eum quod dignissimos repellendus magnam quos rerum odit aut in id!
+                </p>
+
+                <div>
+                    <h2 class="text-2xl font-bold text-black mb-2">Our Vision & Mission</h2>
+                    <p class="text-sm bg-gray-300/50 p-4 rounded-xl border border-gray-400">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita sed dicta dolor atque doloremque consequatur voluptate error fugit eveniet, voluptates amet sequi reiciendis rerum exercitationem labore dolore aliquid dolores minus.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold text-black mb-2">Why Join Us?</h2>
+                    <ul class="list-disc list-inside text-sm space-y-2">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

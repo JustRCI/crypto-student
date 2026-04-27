@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../asset/img/Favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Student - Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Masukin Keyframes sama kayak sebelumnya */
+        @keyframes fade-in-down { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes fade-in-left { 0% { opacity: 0; transform: translateX(-20px); } 100% { opacity: 1; transform: translateX(0); } }
+        @keyframes bounce-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes fade-in-up { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-down { animation: fade-in-down 0.8s ease-out forwards; }
+        .animate-fade-in-left { animation: fade-in-left 0.8s ease-out forwards; }
+        .animate-bounce-slow { animation: bounce-slow 3s infinite; }
+        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+    </style>
+</head>
+<body>
+    <div class="relative h-screen w-full flex overflow-hidden bg-[#d1d5db]">
+        
+        <div class="relative w-[60%] bg-[#0a051a] flex flex-col p-12 z-10 animate-fade-in-left" style="clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);">
+            <nav class="flex items-center space-x-12 w-full animate-fade-in-down z-20">
+                <img src="../asset/img/icon.png" alt="Logo" class="h-20 w-auto">
+                <div class="flex space-x-8">
+                    <a href="../index.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">Home</a>
+                    <a href="about.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">About</a>
+                    <a href="service.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">Service</a>
+                    <a href="contact.html" class="text-purple-400 border-b-2 border-purple-400 font-bold text-sm hover:text-purple-300 transition-all tracking-wide">Contact</a>
+                </div>
+            </nav>
+            <div class="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-purple-900/30 blur-[120px] rounded-full z-0"></div>
+        </div>
+
+        <div class="absolute right-0 w-[50%] h-full flex flex-col justify-center pl-40 pr-20 z-0 animate-fade-in-up">
+            <h1 class="text-4xl font-extrabold text-[#0a051a] mb-2">Get in Touch</h1>
+            <p class="text-sm text-gray-600 mb-8">[Isi teks misal: Punya pertanyaan? Jangan ragu buat hubungi tim kami.]</p>
+            
+            <div class="w-full max-w-md flex flex-col space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full p-4 bg-gray-300/50 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                <input type="email" placeholder="Your Email Address" class="w-full p-4 bg-gray-300/50 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                <textarea placeholder="How can we help you?" rows="4" class="w-full p-4 bg-gray-300/50 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all resize-none"></textarea>
+
+                <button class="bg-[#0a051a] text-white w-fit px-10 py-3 mt-2 rounded-full font-bold hover:bg-purple-900 transition-all active:scale-95 shadow-lg">
+                    Send Message
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

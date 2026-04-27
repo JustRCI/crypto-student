@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../asset/img/Favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @keyframes fade-in-down {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fade-in-left {
+            0% { opacity: 0; transform: translateX(-20px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down { animation: fade-in-down 0.8s ease-out forwards; }
+        .animate-fade-in-left { animation: fade-in-left 0.8s ease-out forwards; }
+        .animate-bounce-slow { animation: bounce-slow 3s infinite; }
+        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+    </style>
+</head>
+<body>
+    <div class="relative min-h-screen w-full flex overflow-hidden bg-[#d1d5db]">
+        
+        <div class="relative w-[60%] bg-[#0a051a] flex flex-col p-12 z-10 animate-fade-in-left"
+            style="clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);">
+            
+            <nav class="flex items-center space-x-12 w-full animate-fade-in-down z-10">
+                <a href="../Index.html">
+                <img src="../asset/img/icon.png" alt="Logo" class="h-20 w-auto">
+                </a>
+                <div class="flex space-x-8">
+                    <a href="../Index.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">Home</a>
+                    <a href="about.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">About</a>
+                    <a href="service.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">Service</a>
+                    <a href="contact.html" class="text-white font-bold text-sm hover:text-purple-300 transition-all tracking-wide">Contact</a>
+                </div>
+            </nav>
+
+            <div class="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-purple-900/30 blur-[120px] rounded-full z-0"></div>
+        </div>
+
+        <div class="absolute right-0 w-[50%] h-full flex flex-col justify-center pl-40 pr-20 z-0">
+            
+            <div class="flex space-x-4 mb-8 border-b border-gray-400 pb-2 w-fit">
+                <button id="btn-register" onclick="toggleForm('register')" class="bg-[#0a051a] text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105">Sign Up</button>
+                <button id="btn-signin" onclick="toggleForm('signin')" class="text-gray-600 bg-transparent px-6 py-2 rounded-full font-bold hover:text-black transition-all duration-300">Sign in</button>
+            </div>
+
+            <div class="overflow-hidden w-full max-w-md">
+                <div id="form-slider" class="flex w-[200%] transition-transform duration-500 ease-in-out">
+                    
+                    <div class="w-1/2 flex flex-col space-y-4 pr-4 animate-fade-in-up">
+                        <input type="text" placeholder="Full name" class="w-full p-4 bg-gray-300/50 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                        <input type="email" placeholder="Email" class="w-full p-4 bg-gray-300/50 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                        <input type="password" placeholder="Password" class="w-full p-4 bg-gray-300/50 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                        
+                        <label class="flex items-center space-x-3 text-xs text-gray-700">
+                            <input type="checkbox" class="w-4 h-4 rounded border-gray-400">
+                            <span>I agree that Crypto Students may send me marketing messages.</span>
+                        </label>
+
+                        <button class="bg-[#0a051a] text-white w-fit px-10 py-3 rounded-full font-bold hover:bg-purple-900 transition-all active:scale-95 shadow-lg">
+                            Create account for free
+                        </button>
+                    </div>
+
+                    <div class="w-1/2 flex flex-col space-y-4 pr-4">
+                        <input type="email" placeholder="Email" class="w-full p-4 bg-gray-300/50 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                        <input type="password" placeholder="Password" class="w-full p-4 bg-gray-300/50 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                        
+                        <div class="flex justify-between items-center">
+                            <label class="flex items-center space-x-3 text-xs text-gray-700">
+                                <input type="checkbox" class="w-4 h-4 rounded border-gray-400">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="ForgotPass.html" class="text-xs text-[#0a051a] font-bold hover:text-purple-700 transition-colors">Forgot password?</a>
+                        </div>
+
+                        <button class="bg-[#0a051a] text-white w-fit px-10 py-3 rounded-full font-bold hover:bg-purple-900 transition-all active:scale-95 shadow-lg">
+                            Login to account
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(type) {
+            const slider = document.getElementById('form-slider');
+            const btnRegister = document.getElementById('btn-register');
+            const btnSignin = document.getElementById('btn-signin');
+
+            const activeClasses = "bg-[#0a051a] text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105".split(" ");
+            const inactiveClasses = "text-gray-600 bg-transparent px-6 py-2 rounded-full font-bold hover:text-black transition-all duration-300".split(" ");
+
+            if (type === 'signin') {
+                slider.style.transform = 'translateX(-50%)';
+                btnSignin.className = activeClasses.join(" ");
+                btnRegister.className = inactiveClasses.join(" ");
+            } else {
+                slider.style.transform = 'translateX(0)';
+                btnRegister.className = activeClasses.join(" ");
+                btnSignin.className = inactiveClasses.join(" ");
+            }
+        }
+    </script>
+</body>
+</html>
