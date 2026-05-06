@@ -122,14 +122,12 @@
             const themeToggle = document.getElementById('theme-toggle');
             const themeLabel = document.getElementById('theme-label');
 
-            // --- FITUR 1: BUKA TUTUP SIDEBAR ---
             if (toggleBtn && sidebar) {
                 toggleBtn.addEventListener('click', () => {
                     sidebar.classList.toggle('shrink');
                 });
             }
 
-            // --- FITUR 2: DARK MODE ---
             if (themeToggle && themeLabel) {
                 // Cek memori
                 if (localStorage.getItem('theme') === 'dark') {
@@ -158,13 +156,11 @@
         });
     </script>
     <script>
-    // Si Satpam ngecek kunci
     const session = localStorage.getItem('userSession');
 
     if (!session) {
-        // Kalau nggak ada kunci, tendang ke halaman login
-        alert("Waduh, lu belum login Bang! Balik dulu sana.");
-        window.location.replace("sign_in.html"); // Sesuaikan nama file login lu
+        alert("Anda harus login terlebih dahulu.");
+        window.location.replace("sign_in.html");
     }
 </script>
 </body>
