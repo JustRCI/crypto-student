@@ -157,5 +157,15 @@
             }
         });
     </script>
+    <script>
+    // Si Satpam ngecek kunci
+    const session = localStorage.getItem('userSession');
+
+    if (!session) {
+        // Kalau nggak ada kunci, tendang ke halaman login
+        alert("Waduh, lu belum login Bang! Balik dulu sana.");
+        window.location.replace("sign_in.html"); // Sesuaikan nama file login lu
+    }
+</script>
 </body>
 </html>
