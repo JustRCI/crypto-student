@@ -117,25 +117,6 @@
             }
         }
     </script>
-    <script>
-        function toggleForm(type) {
-            const slider = document.getElementById('form-slider');
-            const btnRegister = document.getElementById('btn-register');
-            const btnSignin = document.getElementById('btn-signin');
-            const activeClasses = "bg-[#0a051a] text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105".split(" ");
-            const inactiveClasses = "text-gray-600 bg-transparent px-6 py-2 rounded-full font-bold hover:text-black transition-all duration-300".split(" ");
-
-            if (type === 'signin') {
-                slider.style.transform = 'translateX(-50%)';
-                btnSignin.className = activeClasses.join(" ");
-                btnRegister.className = inactiveClasses.join(" ");
-            } else {
-                slider.style.transform = 'translateX(0)';
-                btnRegister.className = activeClasses.join(" ");
-                btnSignin.className = inactiveClasses.join(" ");
-            }
-        }
-    </script>
     <script src="../asset/js/script.js"></script>
 </body>
 </html>
