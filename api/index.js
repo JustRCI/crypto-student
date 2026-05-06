@@ -14,34 +14,46 @@ const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-app.post('/api/signup', async (req, res) => {
-    const { email, password, fullName } = req.body;
-    
-    const { data, error } = await supabase.auth.signUp({
-        email: email,
-        password: password,
-        options: {
-            data: { full_name: fullName }
-        }
-    });
-
-    if (error) return res.status(400).json({ error: error.message });
-    
-    res.json({ message: 'Silakan periksa email Anda untuk verifikasi akun.', data });
-});
-
-app.post('/api/signin', async (req, res) => {
-    try { // <--- Ditambahin pengaman
-        const { email, password } = req.body;
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email, password
+app.post('/signup', async (req, res) => {
+    try {
+        const { email, password, fullName } = req.body;
+        
+        const { data, error } = await supabase.auth.signUp({
+            email: email,
+            password: password,
+            options: {
+                data: { full_name: fullName }
+            }
         });
 
-        if (error) throw error; // <--- Langsung lempar ke catch kalau ada masalah
+        if (error) throw error;
         
-        res.status(200).json({ message: 'Login Berhasil!', data });
+        res.status(200).json({ 
+            message: 'Pendaftaran berhasil! Silakan cek email lu buat verifikasi.', 
+            data 
+        });
     } catch (error) {
-        res.status(400).json({ error: error.message }); // <--- Biar frontend dapet info error yang jelas
+        res.status(400).json({ error: error.message });
+    }
+});
+
+app.post('/signin', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password
+        });
+
+        if (error) throw error;
+        
+        res.status(200).json({ 
+            message: 'Login Berhasil!', 
+            data 
+        });
+    } catch (error) {
+        res.status(400).json({ error: error.message });
     }
 });
 
