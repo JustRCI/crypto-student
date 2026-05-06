@@ -1,3 +1,36 @@
+// Fungsi ini dipanggil pas tombol "Login" ditekan di HTML lu
+async function kirimDataLogin(emailInput, passwordInput) {
+    try {
+        // 1. Panggil pelayan buat pergi ke loket dapur (Backend lu)
+        // Ganti baris fetch lu jadi ini:
+const response = await fetch('/api/signin', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        email: emailInput,
+        password: passwordInput
+    })
+});
+
+        // 3. Baca balasan dari Kepala Koki
+        const hasil = await response.json();
+
+        // 4. Cek apakah Kepala Koki bilang error (Ditolak)
+        if (!response.ok) {
+            alert("Gagal Login: " + hasil.error);
+        } else {
+            // Kalau sukses, kasih selamat dan pindahin ke halaman Dashboard!
+            alert("Mantap: " + hasil.message);
+            window.location.href = "dashboard.html"; // Ganti sama nama file dashboard lu
+        }
+    } catch (err) {
+        // Ini kalau server Node.js lu lupa dinyalain
+        console.error("Wah, dapurnya tutup bang:", err);
+        alert("Server lagi mati, coba lagi nanti!");
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Ambil semua elemen yang dibutuhin
     const rootElement = document.getElementById('root'); 
