@@ -13,14 +13,14 @@ async function kirimDataLogin(emailInput, passwordInput) {
         const hasil = await response.json();
 
         if (!response.ok) {
-            alert("Gagal Login: " + (hasil.error || "Cek email/password lu!"));
+            alert("Gagal Login: " + (hasil.error || "Cek email/password anda!"));
         } else {
 
-            alert("Login Berhasil.");
+            alert("Mantap! Login Berhasil.");
 
             localStorage.setItem('userSession', JSON.stringify(hasil.data.session));
             
-            window.location.replace("../../HTML/dashboard.html");
+            window.location.replace("/dashboard.html");
         }
     } catch (err) {
         console.error("Dapur Vercel Error:", err);
