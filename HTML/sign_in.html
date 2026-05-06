@@ -118,61 +118,26 @@
         }
     </script>
     <script>
-        // 1. Logic SIGN UP (Sekarang nembak ke Server Node.js lu)
-        const signupForm = document.getElementById('signup-form');
-        signupForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = document.getElementById('signup-email').value.trim();
-            const password = document.getElementById('signup-password').value.trim();
-            const fullName = document.getElementById('signup-name').value.trim();
+        // Sisain ini aja buat animasi ganti form
+        function toggleForm(type) {
+            const slider = document.getElementById('form-slider');
+            const btnRegister = document.getElementById('btn-register');
+            const btnSignin = document.getElementById('btn-signin');
+            const activeClasses = "bg-[#0a051a] text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105".split(" ");
+            const inactiveClasses = "text-gray-600 bg-transparent px-6 py-2 rounded-full font-bold hover:text-black transition-all duration-300".split(" ");
 
-            try {
-                const response = await fetch('http://localhost:3000/api/signup', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password, fullName })
-                });
-                const result = await response.json();
-
-                if (!response.ok) throw new Error(result.error);
-                alert(result.message); // Munculin alert sukses dari server
-                
-                // Optional: Kosongin form setelah sukses
-                signupForm.reset();
-
-            } catch (error) {
-                alert("Error Sign Up: " + error.message);
+            if (type === 'signin') {
+                slider.style.transform = 'translateX(-50%)';
+                btnSignin.className = activeClasses.join(" ");
+                btnRegister.className = inactiveClasses.join(" ");
+            } else {
+                slider.style.transform = 'translateX(0)';
+                btnRegister.className = activeClasses.join(" ");
+                btnSignin.className = inactiveClasses.join(" ");
             }
-        });
-
-        // 2. Logic SIGN IN (Sekarang nembak ke Server Node.js lu)
-        const signinForm = document.getElementById('signin-form');
-        signinForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Note: Pastiin ID 'signin-email' & 'signin-password' sesuai sama yang ada di form HTML lu ya
-            const email = document.getElementById('signin-email').value;
-            const password = document.getElementById('signin-password').value;
-
-            try {
-                const response = await fetch('http://localhost:3000/api/signin', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
-                });
-                const result = await response.json();
-
-                if (!response.ok) throw new Error(result.error);
-                
-                alert(result.message); // Munculin alert "Login Berhasil!"
-                window.location.href = "dashboard.html"; // Arahin ke halaman utama lu
-                
-            } catch (error) {
-                alert("Gagal Login: " + error.message);
-            }
-        });
+        }
     </script>
+    
     <script src="../asset/js/script.js"></script>
 </body>
 </html>
