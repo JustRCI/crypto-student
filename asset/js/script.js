@@ -16,11 +16,11 @@ async function kirimDataLogin(emailInput, passwordInput) {
             alert("Gagal Login: " + (hasil.error || "Cek email/password lu!"));
         } else {
 
-            alert("Mantap! Login Berhasil.");
+            alert("Login Berhasil.");
 
             localStorage.setItem('userSession', JSON.stringify(hasil.data.session));
             
-            window.location.replace("/dashboard.html");
+            window.location.replace("../../HTML/dashboard.html");
         }
     } catch (err) {
         console.error("Dapur Vercel Error:", err);
