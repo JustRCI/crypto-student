@@ -20,7 +20,7 @@ async function kirimDataLogin(emailInput, passwordInput) {
 
             localStorage.setItem('userSession', JSON.stringify(hasil.data.session));
             
-            window.location.replace("/dashboard.html");
+            window.location.replace("/HTML/dashboard.html");
         }
     } catch (err) {
         console.error("Dapur Vercel Error:", err);
