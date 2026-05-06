@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../asset/img/Favicon.png">
+    <title>Dashboard Kelas</title>
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="sidebar-container" id="sidebar">
+        <button class="sidebar-viewButton" id="toggle-btn" type="button" title="Shrink/Expand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
+        </button>
+
+        <div class="sidebar-wrapper">
+            <div class="sidebar-themeContainer">
+                <label for="theme-toggle" class="sidebar-themeLabel" id="theme-label">
+                    <input class="sidebar-themeInput" type="checkbox" id="theme-toggle" />
+                    
+                    <div class="sidebar-themeType light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-listIcon">
+                            <circle cx="12" cy="12" r="5" />
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                        </svg>
+                        <span class="sidebar-themeInputText">Light</span>
+                    </div>
+                    
+                    <div class="sidebar-themeType dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-listIcon">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                        <span class="sidebar-themeInputText">Dark</span>
+                    </div>
+                </label>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-listItem active">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-listIcon">
+                            <rect x="3" y="3" rx="2" ry="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                        <span class="sidebar-listItemText">Dashboard</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-profileSection">
+                <img src="https://assets.codepen.io/3306515/i-know.jpg" alt="Profile" />
+                <span>Rei / User</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <h2 style="color: inherit;">Kelas Saya</h2> <div class="card-grid">
+            <div class="card" onclick="window.location.href='../asset/Materi_Html/Materi_Cex/Materi_Cex.html'">
+                <div class="card-header bg-blue-950">
+                    <h3>Materi Cex</h3>
+                    <p>Modul 1</p>
+                </div>
+                <div class="card-body">
+                    <p class="instructor"></p>
+                    <p class="description">Penjelasan mengenai platform jual beli kripto yang dikelola oleh perusahaan terpusat sebagai perantara transaksi.</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="window.location.href='../asset/Materi_Html/Materi_Dex/Materi_Dex.html'">
+                <div class="card-header bg-violet-700">
+                    <h3>Materi Dex</h3>
+                    <p>Modul 2</p>
+                </div>
+                <div class="card-body">
+                    <p class="instructor"></p>
+                    <p class="description">Pengenalan platform perdagangan kripto yang berjalan otomatis melalui teknologi smart contract tanpa keterlibatan pihak ketiga.</p>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='../asset/Materi_Html/Materi_Fundamentals/Materi_Fundamentals.html'">
+                <div class="card-header bg-emerald-600">
+                    <h3>Materi Fundamentals</h3>
+                    <p>Modul 3</p>
+                </div>
+                <div class="card-body">
+                    <p class="instructor"></p>
+                    <p class="description">Pemahaman paling dasar mengenai aset digital dan teknologi blockchain bagi pemula di dunia kripto.</p>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='../asset/Materi_Html/Materi_Futures/Materi_Futures.html'">
+                <div class="card-header bg-red-900">
+                    <h3>Materi Futures</h3>
+                    <p>Modul 4</p>
+                </div>
+                <div class="card-body">
+                    <p class="instructor"></p>
+                    <p class="description">Panduan dasar mengenai perdagangan kontrak harga kripto dengan sistem manajemen risiko yang ketat.</p>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='../asset/Materi_Html/Materi_Technical/Materi_Technical.html'">
+                <div class="card-header bg-amber-500">
+                    <h3>Materi Technical</h3>
+                    <p>Materi 5</p>
+                </div>
+                <div class="card-body">
+                    <p class="instructor"></p>
+                    <p class="description">Metode analisis peluang keuntungan berdasarkan pola pergerakan harga pada grafik atau chart.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const toggleBtn = document.getElementById('toggle-btn');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeLabel = document.getElementById('theme-label');
+
+            // --- FITUR 1: BUKA TUTUP SIDEBAR ---
+            if (toggleBtn && sidebar) {
+                toggleBtn.addEventListener('click', () => {
+                    sidebar.classList.toggle('shrink');
+                });
+            }
+
+            // --- FITUR 2: DARK MODE ---
+            if (themeToggle && themeLabel) {
+                // Cek memori
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.body.classList.add('dark');
+                    themeLabel.classList.add('switched');
+                    themeToggle.checked = true; 
+                }
+
+                // Klik Dark Mode
+                themeLabel.addEventListener('click', (e) => {
+                    e.preventDefault(); 
+                    
+                    themeToggle.checked = !themeToggle.checked; 
+                    
+                    if (themeToggle.checked) {
+                        document.body.classList.add('dark');
+                        themeLabel.classList.add('switched');
+                        localStorage.setItem('theme', 'dark'); 
+                    } else {
+                        document.body.classList.remove('dark');
+                        themeLabel.classList.remove('switched');
+                        localStorage.setItem('theme', 'light'); 
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

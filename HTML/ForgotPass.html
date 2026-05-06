@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../asset/img/Favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Student - Forgot Password</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @keyframes fade-in-down { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes fade-in-left { 0% { opacity: 0; transform: translateX(-20px); } 100% { opacity: 1; transform: translateX(0); } }
+        @keyframes bounce-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes fade-in-up { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-down { animation: fade-in-down 0.8s ease-out forwards; }
+        .animate-fade-in-left { animation: fade-in-left 0.8s ease-out forwards; }
+        .animate-bounce-slow { animation: bounce-slow 3s infinite; }
+        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+    </style>
+</head>
+<body>
+    <div class="relative min-h-screen w-full flex overflow-hidden bg-[#d1d5db]">
+        
+        <div class="relative w-[60%] bg-[#0a051a] flex flex-col p-12 z-10 animate-fade-in-left"
+            style="clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);">
+            
+            <div class="flex items-start w-full animate-fade-in-down z-20">
+                <img src="../asset/img/icon.png" alt="Logo" class="h-20 w-auto">
+            </div>
+
+            <div class="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-purple-900/30 blur-[120px] rounded-full z-0"></div>
+        </div>
+
+        <div class="absolute right-0 w-[50%] h-full flex flex-col justify-center pl-40 pr-20 z-0 animate-fade-in-up">
+            
+            <div class="w-full max-w-md flex flex-col">
+                
+                <div class="border-b border-gray-400 pb-4 -mt-20 mb-5">
+                    <a href="sign_in.html" class="inline-flex items-center bg-[#0a051a] text-white px-6 py-2 rounded-full font-bold transition-all hover:bg-purple-900 active:scale-95 shadow-md">
+                        <span class="mr-2 font-bold text-lg">&lt; Sign In</span>
+                    </a>
+                </div>
+
+                <h1 class="text-xl font-bold text-[#0a051a] mb-2">Reset Password</h1>
+                <p class="text-sm text-gray-800 font-medium leading-relaxed mb-6 pr-4">
+                    Please enter your email address below and we will send you an email with instructions on how to reset your password.
+                </p>
+                
+                <div class="flex flex-col space-y-4">
+                    <input type="email" placeholder="Email" class="w-full p-4 bg-gray-300/50 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                    
+                    <button class="bg-[#0a051a] text-white w-fit px-8 py-3 rounded-full font-
