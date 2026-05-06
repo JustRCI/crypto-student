@@ -14,7 +14,7 @@ const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-app.post('/signup', async (req, res) => {
+app.post('/api/signup', async (req, res) => {
     try {
         const { email, password, fullName } = req.body;
         
@@ -37,7 +37,7 @@ app.post('/signup', async (req, res) => {
     }
 });
 
-app.post('/signin', async (req, res) => {
+app.post('/api/signin', async (req, res) => {
     try {
         const { email, password } = req.body;
         
