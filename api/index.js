@@ -31,18 +31,22 @@ app.post('/api/signup', async (req, res) => {
 });
 
 app.post('/api/signin', async (req, res) => {
-    const { email, password } = req.body;
-    
-    const { data, error } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
-    });
+    try { // <--- Ditambahin pengaman
+        const { email, password } = req.body;
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email, password
+        });
 
-    if (error) return res.status(400).json({ error: error.message });
-    
-    res.json({ message: 'Login Berhasil! Welcome back.', data });
+        if (error) throw error; // <--- Langsung lempar ke catch kalau ada masalah
+        
+        res.status(200).json({ message: 'Login Berhasil!', data });
+    } catch (error) {
+        res.status(400).json({ error: error.message }); // <--- Biar frontend dapet info error yang jelas
+    }
 });
 
-app.listen(3000, () => {
-    console.log('Server Backend lu udah jalan di http://localhost:3000 🔥');
-});
+module.exports = app;
+
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(3000, () => console.log('Jalan di local port 3000'));
+}
